@@ -1,18 +1,22 @@
 def fizzbuzzes(ary)
-  ary.inject([]) do |ary, n|
-    ary << fizzbuzz(n)
+  response = []
+
+  ary.each do |number|
+    response << fizzbuzz(number)
   end
+
+  response
 end
 
 def fizzbuzz(number)
   msg = ''
 
-  msg << 'fizz' if mod(number, 3)
-  msg << 'buzz' if mod(number, 5)
+  msg << 'Fizz' if mod(number, 3)
+  msg << 'Buzz' if mod(number, 5)
 
   msg.empty? ? number : msg
 end
 
-def mod(n, div)
-  n % div == 0
+def mod(number, div)
+  number % div == 0
 end
